@@ -1,0 +1,9 @@
+#= require jquery
+#= require underscore
+#= require backbone
+#= require backbone.wreqr
+#= require backbone.babysitter
+#= require marionette
+#= require bootstrap
+#= require modernizr/modernizr
+#= require ./faker-full

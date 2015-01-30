@@ -1,0 +1,119 @@
+@import "compass";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+$footer-height: 60px;
+$background: #f5f5f5;
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	padding-bottom: $footer-height;
+}
+
+header {
+//	margin: 20px;
+	margin-bottom: 0;
+	background-color: $background;
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: $footer-height;
+	background-color: $background;
+
+	.container {
+		padding: 0 15px;
+	}
+	.text-muted {
+		margin: 20px 0;
+	}
+}
+
+.index-view, .checkout-view {
+	.list { //multi-column layout просто для скорости
+		@include make-row();
+	}
+}
+
+.index-view {
+	h1 {
+		text-align: center;
+	}
+}
+
+.good-view {
+	padding-bottom: 10px;
+	@include make-xs-column(6);
+	@include make-sm-column(4);
+	@include make-md-column(3);
+	@include make-lg-column(2);
+
+	@media (min-width: $screen-lg) {
+		&:nth-child(6n+7) {
+			clear: both;
+		}
+	}
+	@media (min-width: $screen-md) and (max-width: $screen-lg) {
+		&:nth-child(4n+5) {
+			clear: both;
+		}
+	}
+	@media (min-width: $screen-sm) and (max-width: $screen-md) {
+		&:nth-child(3n+4) {
+			clear: both;
+		}
+	}
+	@media (min-width: $screen-xs) and (max-width: $screen-sm) {
+		&:nth-child(2n+3) {
+			clear: both;
+		}
+	}
+
+	.content {
+		padding: 10px;
+		@include border-radius(5px);
+	}
+
+	.name {
+		text-align: center;
+		margin-bottom: 5px;
+		word-break: break-word;
+		font-weight: 500;
+		@include text-overflow;
+	}
+	.description {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		word-break: break-word;
+	}
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+
+.selectable-good-view {
+	.no-touch &:not(.selected) .content:hover {
+		background-color: whitesmoke;
+	}
+	&.selected .content {
+		background-color: #D4FFD1;
+	}
+
+	.content {
+		cursor: pointer;
+	}
+}
+
+.removable-good-view {
+	.delete-button {
+		margin: 0 auto;
+		display: block;
+	}
+}

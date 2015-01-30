@@ -1,0 +1,10 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "backbone": "latest",
+    "marionette": "latest",
+    "bootstrap-sass-official": "latest",
+    "faker": "latest",
+    "modernizr": "latest"
+  }
+}

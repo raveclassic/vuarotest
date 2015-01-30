@@ -1,0 +1,7 @@
+asset 'backbone'
+asset 'marionette'
+
+asset 'bootstrap-sass-official'
+
+asset 'faker'
+asset 'modernizr'
